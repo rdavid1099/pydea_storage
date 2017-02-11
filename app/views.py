@@ -8,7 +8,7 @@ def index():
     if len(all_ideas) == 0:
         return abort(404)
     else:
-        return jsonify({'ideas': all_ideas}), 200
+        return jsonify({'count': len(all_ideas), 'ideas': all_ideas}), 200
 
 @app.route('/api/v1/pydeas/create', methods=['POST'])
 def create():
